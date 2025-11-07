@@ -5,7 +5,7 @@ services:
         container_name: ${AUTOSCALER_SIDECAR_INSTANCE_ID:-jibri}
         volumes:
             - ${CONFIG}/config:/config:Z
-#            - ${CONFIG}/aws-installer:/etc/services.d/60-aws-installer/run:Z
+            - ${CONFIG}/aws-installer:/etc/cont-init.d/20-aws-installer:Z
         shm_size: '2gb'
         cap_add:
             - SYS_ADMIN
